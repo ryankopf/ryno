@@ -1,6 +1,6 @@
-class CreateAntispamBlocks < ActiveRecord::Migration[6.1]
+class CreateRhinoBlocks < ActiveRecord::Migration[6.1]
   def change
-    create_table :antispam_blocks do |t|
+    create_table :rhino_blocks do |t|
       t.integer :page_id
       t.integer :block_id
       t.blob :blocks_order
