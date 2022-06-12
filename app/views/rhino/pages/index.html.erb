@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+
+<% for @page in @pages %>
+  <div class="row">
+    <div class="col-4"><%= link_to @page.get_title, edit_page_path(@page) %></div>
+    <div class="col-3"><%= @page.url %></div>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to 'New Page', new_page_path, class: 'button' %>
