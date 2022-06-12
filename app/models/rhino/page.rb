@@ -4,7 +4,7 @@ module Rhino
     has_one :publishedpage
 
     def get_title
-      self.title.blank? ? "(untitled") : self.title
+      self.title.blank? ? "(untitled)" : self.title
     end
     def publish!
       create_publishedpage! if self.publishedpage.nil?
