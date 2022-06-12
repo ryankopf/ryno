@@ -1,6 +1,7 @@
 require "rhino/version"
 require "rhino/engine"
 require "rhino/tools"
+require "rhino/page_constraint"
 
 module Rhino
   ActiveSupport.on_load(:action_controller) do
