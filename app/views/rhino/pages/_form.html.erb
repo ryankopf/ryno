@@ -63,7 +63,7 @@
     $("#page_title").on("change",FormMagic.change_title);
     $("#page_seo_title").on("keypress",function() {$("#page_seo_title").removeClass('follows')});
     $("#page_url").on("keypress",function() {$("#page_url").removeClass('follows')});
-    $("#page_seo_title").on("change",function() {$("#page_seo_title").val()==''&&($("#page_seo_title").val($("#page_title").val()),$("#page_url").addClass('follows')})
+    $("#page_seo_title").on("change",function() {$("#page_seo_title").val()==''&&($("#page_seo_title").val($("#page_title").val()),$("#page_url").addClass('follows'))})
     $("#page_url").on("change",function() {$("#page_url").val()==''&&($("#page_url").val(FormMagic.title_to_url()),$("#page_url").addClass('follows'))})
   }
   FormMagic.change_title = function () {
