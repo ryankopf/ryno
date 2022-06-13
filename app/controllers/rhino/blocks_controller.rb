@@ -21,8 +21,7 @@ module Rhino
 
     def update
       if @block.update(block_params)
-        render :update
-        #redirect_to @block
+        redirect_to @block
       else
         render :edit
       end
