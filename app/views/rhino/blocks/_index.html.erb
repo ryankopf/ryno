@@ -2,5 +2,5 @@
   <%= render partial: "rhino/blocks/show", block: @block %>
 <% end %>
 <div class="text-center">
-  <%= link_to "Add Block", new_block_path(page_id: @page.id), class: 'btn btn-primary' %>
+  <%= link_to "Add Block", new_block_path(page_id: @page.id), data: {'turbo-frame': "page_#{@page.id}_blocks", 'turbo-method': 'delete'} class: 'btn btn-primary' %>
 </div>
