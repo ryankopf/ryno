@@ -89,7 +89,7 @@
     FormMagic.post_form('blocks');
     FormMagic.post_form('pages');
   }
-  FormMagic.post_form = functino (name) {
+  FormMagic.post_form = function (name) {
     $("form").each(function (i) {
       var b = $(this);
       var url = b.attr('action')
