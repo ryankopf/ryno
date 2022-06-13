@@ -19,6 +19,14 @@ module Rhino
       redirect_to @block
     end
 
+    def update
+      if @block.update(block_params)
+        redirect_to @block
+      else
+
+      end
+    end
+
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_block
