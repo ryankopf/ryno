@@ -33,6 +33,8 @@ module Rhino
       respond_to do |format|
         format.html { redirect_to page_url(@page), notice: 'Block Removed' }
         format.json { head :no_content }
+        #format.turbo_stream { render turbo_stream: turbo_stream.prepend('posts', partial: 'post') }
+        format.turbo_stream { render turbo_stream: turbo_stream.remove("block_#{@block.id}") }
       end
     end
 
