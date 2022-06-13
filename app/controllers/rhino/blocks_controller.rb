@@ -35,7 +35,7 @@ module Rhino
 
       # Only allow a list of trusted parameters through.
       def block_params
-        params.require(:block).permit(:ip, :provider, :controllername, :actionname)
+        params.require(:block).permit(:page_id, :block_id, :blocks_order, :block_type, :css_classes, :dont_contain, :content)
       end
   end
 end
