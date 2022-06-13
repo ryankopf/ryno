@@ -85,6 +85,20 @@
     url = url.replace(/[^a-z0-9]/gi, '-');
     return url;
   };
+  FormMagic.post_blocks = function () {
+    FormMagic.post_form('blocks');
+    FormMagic.post_form('pages');
+  }
+  FormMagic.post_form = functino (name) {
+    $("form").each(function (i) {
+      var b = $(this);
+      var url = b.attr('action')
+      if (url.indexOf(name) < 0) {
+        return
+      }
+      $(this).submit()
+    });
+  }
   FormMagic.eachx = function () {
     $("form").each(function (i) {
       var b = $(this);
@@ -100,7 +114,7 @@
         url: url,
         method: 'post'
       })
-    })
+    });
   };
   (function(){var r = setInterval(function(){"undefined"!=typeof $&&(clearInterval(r),FormMagic.initialize())},300);})();
 
