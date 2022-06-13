@@ -3,7 +3,7 @@ require_dependency "rhino/application_controller"
 module Rhino
   class BlocksController < ApplicationController
     before_action :must_be_admin
-    before_action :set_block, only: [:show]
+    before_action :set_block, only: [:show,:update]
 
     # GET /blocks
     def index
@@ -23,7 +23,7 @@ module Rhino
       if @block.update(block_params)
         redirect_to @block
       else
-
+        render :edit
       end
     end
 
