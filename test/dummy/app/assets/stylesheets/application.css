@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.rem1 {
+  font-size:1rem;
+}
