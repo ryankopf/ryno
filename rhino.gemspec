@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/ryankopf/rhino"
   spec.metadata["changelog_uri"] = "https://github.com/ryankopf/rhino/CHANGELOG.md"
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["{app,config,db,lib}/**/*", "THE-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", ">= 6.1.0"
   #Future: spec.add_dependency "image_processing", "~> 1.0"
