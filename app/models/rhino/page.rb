@@ -17,9 +17,10 @@ module Rhino
       Publishedpage.create(url: self.url, content: self.render_content, page_id: self.id, title: self.get_title, seo_title: self.seo_title)
       self.reload!
     end
-    def render_content
+    def render_content(t)
       @no_edit_button = true
-      ApplicationController.new.render_to_string(action: 'rhino/pages/show', locals: { page: @page })
+      ApplicationController.new.render_to_string(action: t, locals: { page: @page })
+      #ApplicationController.new.render_to_string(action: 'rhino/pages/show', locals: { page: @page })
       #PagesController.show
       #self.blocks.pluck(:content).join('')
     end
