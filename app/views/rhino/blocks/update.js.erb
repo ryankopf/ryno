@@ -1,1 +1,1 @@
-$("#block_<%= @block.id %>").replaceWith("<%=j render partial: 'rhino/blocks/edit' %>")
+$("#block_<%= @block.id %>").replaceWith("<%=j render partial: 'rhino/blocks/edit', block: @block %>")
