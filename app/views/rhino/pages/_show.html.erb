@@ -1,3 +1,4 @@
+<% @page = page if (@page.nil? && defined?(page)) %>
 <% @containment = "<div class='page container #{@page.css_classes}'>" %>
 <% @end_containment = "</div>" %>
 <% @contain = true %>

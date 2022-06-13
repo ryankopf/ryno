@@ -19,8 +19,8 @@ module Rhino
     end
     def render_content(t)
       @no_edit_button = true
-      ApplicationController.new.render_to_string(partial: t, locals: { page: @page })
-      #ApplicationController.new.render_to_string(action: 'rhino/pages/show', locals: { page: @page })
+      #ApplicationController.new.render_to_string(partial: t, locals: { page: @page })
+      ApplicationController.new.render_to_string(partial: 'rhino/pages/show', locals: { page: @page })
       #PagesController.show
       #self.blocks.pluck(:content).join('')
     end
