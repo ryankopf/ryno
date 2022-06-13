@@ -1,7 +1,7 @@
 <% @containment = "<div class='page container #{@page.css_classes}'>" %>
 <% @end_containment = "</div>" %>
 <% @contain = true %>
-<% @contain = false if @page.blocks.first.dont_contain %>
+<% @contain = false if (@page.blocks.present? && @page.blocks.first.dont_contain) %>
 <% if @contain %>
   <%=raw @containment %>
 <% end %>
