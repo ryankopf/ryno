@@ -18,8 +18,8 @@ module Rhino
       self.reload!
     end
     def render_content
-      #PagesController.show
-      self.blocks.pluck(:content).join('')
+      PagesController.show
+      #self.blocks.pluck(:content).join('')
     end
 
   end
