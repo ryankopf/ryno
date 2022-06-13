@@ -20,7 +20,8 @@ module Rhino
       respond_to do |format|
         format.html { redirect_to @block }
         format.turbo_stream {
-          render turbo_stream: turbo_stream.prepend("page_#{@block.page_id}_blocks", partial: 'show')
+          render turbo_stream: turbo_stream.prepend("page_#{@block.page_id}_blocks", partial: 'show', locals: {block: @block}),
+                 turbo_stream.remove("page_#{@block.page_id}_blocks")
         }
       end
     end

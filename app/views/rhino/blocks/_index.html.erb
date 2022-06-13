@@ -2,7 +2,5 @@
   <%= render partial: "rhino/blocks/show", block: @block %>
 <% end %>
 <div class="text-center">
-  <%= turbo_frame_tag "block_form" do %>
-    <%= link_to "Add Block", new_block_path(page_id: @page.id), class: 'btn btn-primary' %>
-  <% end %>
+  <%= render partial: 'rhino/blocks/new' %>
 </div>
