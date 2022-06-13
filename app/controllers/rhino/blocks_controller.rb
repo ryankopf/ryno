@@ -19,7 +19,9 @@ module Rhino
       @block = @page.blocks.create
       respond_to do |format|
         format.html { redirect_to @block }
-        #format.turbo_stream { render turbo_stream: turbo_stream.prepend("page_#{@block.page_id}_blocks", partial: 'show') }
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.prepend("page_#{@block.page_id}_blocks", partial: 'show')
+        }
       end
     end
 
