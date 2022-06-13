@@ -20,8 +20,8 @@
 
   <div class="form-group">
     <%= form.text_area :content, class: 'form-control' %>
-    <a href="<%= block_path(block.id) %>"
-       data-turbo-frame="block_<%= block.id %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?" class="btn btn-secondary">&times;</a>
+    <a href="<%= block_path(block.id) %>" class="btn btn-secondary"
+       data-turbo-frame="block_<%= block.id %>" data-turbo-method="delete">&times;</a>
   </div>
 
   <div class="actions">
