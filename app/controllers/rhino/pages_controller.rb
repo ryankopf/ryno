@@ -41,7 +41,7 @@ module Rhino
           @page.render_content(request)
           @page.publish!
         end
-        redirect_to @page
+        redirect_to edit_path_path(@page)
       else
         render :edit
       end
