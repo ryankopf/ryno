@@ -13,6 +13,7 @@ module Rhino
 
     # GET /blocks/1
     def show
+      @page = @block.page
       respond_to do |format|
         format.html { }
         format.turbo_stream {
