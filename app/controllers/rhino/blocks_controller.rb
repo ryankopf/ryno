@@ -31,7 +31,7 @@ module Rhino
       @page = @block.page
       @block.destroy
       respond_to do |format|
-        format.html { redirect_to page_url, notice: 'Block Removed' }
+        format.html { redirect_to @page, notice: 'Block Removed' }
         format.json { head :no_content }
       end
     end
