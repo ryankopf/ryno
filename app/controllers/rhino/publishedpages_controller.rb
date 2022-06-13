@@ -2,14 +2,14 @@ require_dependency "rhino/application_controller"
 
 module Rhino
   class PublishedpagesController < ApplicationController
-    before_action :set_page, only: [:show]
+    before_action :set_publishedpage, only: [:show]
 
     def show
     end
 
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_clear
+      def set_publishedpage
         @publishedpage = Publishedpage.find(params[:id])
       end
   end
