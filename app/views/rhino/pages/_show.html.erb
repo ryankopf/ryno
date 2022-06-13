@@ -1,4 +1,5 @@
 <% @page = page if (@page.nil? && defined?(page)) %>
+<% @no_edit_button = no_edit_button if (@no_edit_button.nil? && defined?(no_edit_button)) %>
 <% @containment = "<div class='page container #{@page.css_classes}'>" %>
 <% @end_containment = "</div>" %>
 <% @contain = true %>

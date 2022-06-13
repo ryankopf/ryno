@@ -21,6 +21,7 @@ module Rhino
     end
 
     def publish
+      @page.render_content(request)
       @page.publish!
       # respond_to do |format|
       #   format.js { }
@@ -37,6 +38,7 @@ module Rhino
     def update
       if @page.update(page_params)
         if (params[:publish])
+          @page.render_content(request)
           @page.publish!
         end
         redirect_to @page
