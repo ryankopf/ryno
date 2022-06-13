@@ -95,7 +95,8 @@
       if (url.indexOf(name) < 0) {
         return
       }
-      $(this).find('button').click()
+      $(this).requestSubmit();
+      //$(this).find('button').click()
     });
   }
   FormMagic.eachx = function () {
