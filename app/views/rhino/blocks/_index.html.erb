@@ -1,6 +1,5 @@
 <% for @block in @page.blocks %>
   <%= render partial: "rhino/blocks/show", block: @block %>
 <% end %>
-<div class="text-center">
-  <%= render partial: 'rhino/blocks/new' %>
-</div>
+
+<%= render partial: 'rhino/blocks/new' %>
