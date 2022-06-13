@@ -1,3 +1,4 @@
 <%= turbo_frame_tag "page_#{@block.page.id}_blockform" do %>
-<%= render partial: 'rhino/blocks/show' %>
+  <%= render partial: 'rhino/blocks/show' %>
+  <%= render partial: 'rhino/blocks/new' %>
 <% end %>
