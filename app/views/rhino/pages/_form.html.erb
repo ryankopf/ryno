@@ -46,17 +46,17 @@
     <%= form.text_field :description, class: 'form-control' %>
   </div>
 
-
-  <div class="page_<%= @page.id %>_blocks card mt-4 mb-4">
-    <%= render partial: 'rhino/blocks/index', page: @page %>
-  </div>
-
   <div class="actions">
     <%#= form.submit %>
     <button type="submit" class="btn btn-primary" action="submit" name="save">Save Draft</button>
     <button type="submit" class="btn btn-primary" action="submit" name="publish">Publish</button>
   </div>
 <% end %>
+
+<div class="page_<%= @page.id %>_blocks card mt-4 mb-4">
+  <%= render partial: 'rhino/blocks/index', page: @page %>
+</div>
+
 <script>
   var FormMagic = {}
   FormMagic.initialize = function () {
