@@ -1,0 +1,30 @@
+<% @containment = "<div class='page container #{@page.css_classes}'>" %>
+<% @end_containment = "</div>" %>
+<% @contain = true %>
+<% @contain = false if (@page.blocks.present? && @page.blocks.first.dont_contain) %>
+<% if @contain %>
+  <%=raw @containment %>
+<% end %>
+<% for @block in @page.blocks %>
+  <% if @block.dont_contain %>
+    <% if @contain %>
+      <%=raw @end_containment %>
+      <% @contain = false %>
+    <% end %>
+  <% else %>
+    <% unless @contain %>
+      <%=raw @containment %>
+      <% @contain = true %>
+    <% end %>
+  <% end %>
+  <%= render @block %>
+<% end %>
+<% if @contain %>
+  <%=raw @end_containment %>
+<% end %>
+<% unless @no_edit_button %>
+  <div class="p-2">
+    <%= link_to "Edit Page", edit_page_path(@page), class: 'btn btn-primary' %>
+    <%= link_to "Publish Page", publish_page_path(@page), class: 'btn btn-secondary' %>
+  </div>
+<% end %>
