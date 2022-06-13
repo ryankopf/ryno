@@ -1,5 +1,5 @@
 <% for @block in @page.blocks %>
-  <%= render "rhino/blocks/edit" %>
+  <%= render "rhino/blocks/edit", block: @block %>
 <% end %>
 <div class="text-center">
   <%= link_to "Add Block", new_block_path(page_id: @page.id), data: {remote: true}, class: 'btn btn-primary' %>

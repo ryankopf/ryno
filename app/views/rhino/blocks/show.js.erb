@@ -1,5 +1,5 @@
 if ($(".block_<%= @block.id %>").length>0) {
-  $(".page_<%= @page.id %>_blocks").append("<%=j render partial: 'rhino/blocks/edit' %>")
+  $(".page_<%= @page.id %>_blocks").append("<%=j render partial: 'rhino/blocks/edit', block: @block %>")
 } else {
-  $(".block_<%= @block.id %>").replaceWith("<%=j render partial: 'rhino/blocks/edit' %>")
+  $(".block_<%= @block.id %>").replaceWith("<%=j render partial: 'rhino/blocks/edit', block: @block %>")
 }
