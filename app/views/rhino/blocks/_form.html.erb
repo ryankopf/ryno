@@ -1,5 +1,5 @@
 <% block = @block %>
-<%= form_with(model: block, local: false) do |form| %>
+<%= form_with(model: block, local: false, format: :js) do |form| %>
   <% if block.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(block.errors.count, "error") %> prohibited this challenge from being saved:</h2>
