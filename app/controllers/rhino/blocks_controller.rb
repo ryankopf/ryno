@@ -13,6 +13,12 @@ module Rhino
 
     # GET /blocks/1
     def show
+      respond_to do |format|
+        format.html { }
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.append("page_#{@block.page.id}_blockform", partial: 'show', locals: {block: @block})
+        }
+      end
     end
 
     def new
