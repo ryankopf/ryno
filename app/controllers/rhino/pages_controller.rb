@@ -22,6 +22,10 @@ module Rhino
 
     def publish
       @page.publish!
+      # respond_to do |format|
+      #   format.js { }
+      # end
+      redirect_to @page
     end
 
     def create
@@ -32,6 +36,9 @@ module Rhino
     # PATCH/PUT /pages/1
     def update
       if @page.update(page_params)
+        if (params[:publish])
+          @page.publish!
+        end
         redirect_to @page
       else
         render :edit
