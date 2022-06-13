@@ -18,6 +18,7 @@ module Rhino
       self.reload!
     end
     def render_content
+      @no_edit_button = true
       PagesController.show
       #self.blocks.pluck(:content).join('')
     end

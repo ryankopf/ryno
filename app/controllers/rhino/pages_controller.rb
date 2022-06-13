@@ -3,7 +3,7 @@ require_dependency "rhino/application_controller"
 module Rhino
   class PagesController < ApplicationController
     before_action :must_be_editor
-    before_action :set_page, only: [:show, :edit, :update, :destroy]
+    before_action :set_page, only: [:show, :publish, :edit, :update, :destroy]
 
     def index
       @pages = Page.all
@@ -18,6 +18,10 @@ module Rhino
     end
 
     def edit
+    end
+
+    def publish
+      @page.publish!
     end
 
     def create

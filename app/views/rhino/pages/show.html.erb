@@ -22,3 +22,9 @@
 <% if @contain %>
   <%=raw @end_containment %>
 <% end %>
+<% unless @no_edit_button %>
+  <div class="p-2">
+    <%= link_to "Edit Page", edit_page_path(@page) %>
+    <%= link_to "Publish Page", publish_page_path(@page) %>
+  </div>
+<% end %>
