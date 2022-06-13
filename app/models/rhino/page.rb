@@ -16,7 +16,7 @@ module Rhino
     end
     def create_publishedpage!
       Publishedpage.create(url: self.url, content: self.rendered_content, page_id: self.id, title: self.get_title, seo_title: self.seo_title)
-      self.reload!
+      self.reload
     end
     def render_content(request)
       @no_edit_button = true
