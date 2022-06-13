@@ -4,6 +4,7 @@ module Rhino
   class BlocksController < ApplicationController
     before_action :must_be_admin
     before_action :set_block, only: [:show,:update,:destroy]
+    before_action :set_page, only: [:new]
 
     # GET /blocks
     def index
@@ -15,7 +16,7 @@ module Rhino
     end
 
     def new
-      @block = Block.create(page_id: params[:page_id])
+      @block = @page.blocks.create
       respond_to do |format|
         format.html { redirect_to @block }
         #format.turbo_stream { render turbo_stream: turbo_stream.prepend("page_#{@block.page_id}_blocks", partial: 'show') }
@@ -45,6 +46,9 @@ module Rhino
       # Use callbacks to share common setup or constraints between actions.
       def set_block
         @block = Block.find(params[:id])
+      end
+      def set_page
+        @page = Page.find(params[:page_id])
       end
 
       # Only allow a list of trusted parameters through.
