@@ -1,0 +1,29 @@
+<%= form_with(model: block) do |form| %>
+  <% if block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(block.errors.count, "error") %> prohibited this challenge from being saved:</h2>
+      <ul>
+        <% block.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="advanced" style="display:none;">
+    <div class="form-group">
+      <%= form.label :css_classes %>
+      <%= form.text_field :css_classes, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%#= form.submit %>
+    <button type="submit" class="btn btn-primary" action="submit" name="save">Save</button>
+  </div>
+<% end %>

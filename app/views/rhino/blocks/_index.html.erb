@@ -1,0 +1,6 @@
+<% for @block in @page.blocks %>
+  <%= render "blocks/edit" %>
+<% end %>
+<div class="text-center">
+  <%= link_to "Add Block", new_block_path(page_id: @page.id), class: 'btn btn-primary' %>
+</div>

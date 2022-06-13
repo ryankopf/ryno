@@ -46,9 +46,15 @@
     <%= form.text_field :description, class: 'form-control' %>
   </div>
 
+
+  <div class="page_<%= @page.id %>_blocks">
+    <%= render partial: 'blocks/index' %>
+  </div>
+
   <div class="actions">
     <%#= form.submit %>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" action="submit" name="save">Save Draft</button>
+    <button type="submit" class="btn btn-primary" action="submit" name="publish">Publish</button>
   </div>
 <% end %>
 <script>

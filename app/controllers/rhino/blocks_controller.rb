@@ -14,6 +14,11 @@ module Rhino
     def show
     end
 
+    def new
+      @block = Block.create(page_id: params[:page_id])
+      redirect_to @block
+    end
+
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_block
