@@ -27,7 +27,7 @@
            data-turbo-frame="block_<%= block.id %>" data-turbo-method="delete">&times;</a>
       </div>
     </div>
-    <div class="block_<%= block.id %>_types">
+    <div class="block_types block_<%= block.id %>_types">
       <a href="#" class="btn btn-primary">Paragraph</a>
       <a href="#" class="btn btn-primary">Image</a>
       <%= link_to "Columns", makecolumns_block_path(block), class: 'btn btn-primary' %>
@@ -35,7 +35,7 @@
       <a href="#" class="btn btn-primary">CSS</a>
       <a href="#" class="btn btn-primary" onclick="<%= b %>">Cancel</a>
     </div>
-    <div class="block_<%= block.id %>_content">
+    <div class="block_content block_<%= block.id %>_content">
       <%= form.rich_text_area :content unless (block.content.empty? && (block.block_type=="columns")) %>
     </div>
   </div>
