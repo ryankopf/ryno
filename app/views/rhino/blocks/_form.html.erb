@@ -36,7 +36,7 @@
       <a href="#" class="btn btn-primary" onclick="<%= b %>">Cancel</a>
     </div>
     <div class="block_content block_<%= block.id %>_content">
-      <%= form.rich_text_area :content unless (block.content.empty? && (block.block_type=="columns")) %>
+      <%= form.rich_text_area :content unless (block.content.blank? && (block.block_type=="columns")) %>
     </div>
   </div>
 
