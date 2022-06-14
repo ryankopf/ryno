@@ -5,5 +5,9 @@ module Rhino
     has_rich_text :content
     has_many :blocks
 
+    def columns?
+      self.block_type == "columns"
+    end
+
   end
 end
