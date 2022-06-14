@@ -1,4 +1,4 @@
-<div class="block block_<%= @block.id %> <%= @block.css_classes.blank? ? 'm-4 p-4' : @block.css_classes %>">
+<div class="block block_<%= @block.id %> <%= @block.css_classes.blank? ? 'mt-4 mb-4 pt-4 pb-4' : @block.css_classes %>">
   <%= @block.content %>
   <% for @block in @block.blocks %>
     <%= render @block %>
