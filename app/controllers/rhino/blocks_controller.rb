@@ -3,7 +3,7 @@ require_dependency "rhino/application_controller"
 module Rhino
   class BlocksController < ApplicationController
     before_action :must_be_admin
-    before_action :set_block, only: [:show,:update,:destroy]
+    before_action :set_block, only: [:show,:update,:destroy,:makecolumns]
 
     # GET /blocks
     def index
