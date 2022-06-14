@@ -6,6 +6,9 @@
 <% @contain = false if (@page.blocks.present? && @page.blocks.first.dont_contain) %>
 <% if @contain %>
   <%=raw @containment %>
+  <div class="pt-2 pb-2">
+    <h1><%= @page.title %></h1>
+  </div>
 <% end %>
 <% for @block in @page.blocks %>
   <% if @block.dont_contain %>
