@@ -25,9 +25,9 @@
         <a href="<%= block_path(block.id) %>" class="btn btn-light mr-1"
            data-turbo-frame="block_<%= block.id %>" data-turbo-method="delete">&times;</a>
       </div>
-      <div class="block_types d-none">
-        Paragraph Image Columns
-      </div>
+    </div>
+    <div class="block_types d-none">
+      Paragraph Image Columns
     </div>
     <%= form.text_area :content, class: 'form-control' %>
   </div>
