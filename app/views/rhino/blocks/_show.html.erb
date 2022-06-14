@@ -1,5 +1,8 @@
 <%= turbo_frame_tag @block do %>
-  <div class="block block_<%= @block.id %> m-4 p-4 card">
+  <div class="block block_<%= @block.id %> m-4 p-4 card <%= @block.css_classes %>">
     <%= render partial: 'rhino/blocks/form', block: @block %>
+    <% for @block in @block.blocks %>
+      <%= render partial: 'rhino/blocks/show', block: @block %>
+    <% end %>
   </div>
 <% end %>
