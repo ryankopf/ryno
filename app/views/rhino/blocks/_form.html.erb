@@ -20,7 +20,7 @@
 
   <% b = "$('.block_#{block.id}_types,.block_#{block.id}_content,.block_#{block.id}_opts').toggle();return false;" %>
   <div class="form-group">
-    <div class="block-opts block_<%= @block.id %>_ops text-right <%= 'position-absolute xt-50' if block.columns? %>">
+    <div class="block-opts block_<%= @block.id %>_opts text-right <%= 'position-absolute xt-50' if block.columns? %>">
       <div class="<%= 'position-absolute' unless block.columns? %> p-3" style="right:0;">
         <a href="#" class="btn btn-secondary mr-1" onclick="<%= b %>">&#x2699;</a>
         <a href="<%= block_path(block.id) %>" class="btn btn-light mr-1"
