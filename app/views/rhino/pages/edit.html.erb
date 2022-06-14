@@ -1,4 +1,8 @@
 <%= turbo_frame_tag @page do %>
+  <div class="breadcrumbs">
+    <%= link_to "Pages", pages_path %> &raquo;
+    <%= @page.title %>
+  </div>
   <h3>
     Editing Page
     <li class="d-inline-block mb-0 rem1" style="font-size:1rem;"><a href="/<%= @page.url %>" target="_blank"><i class="fas fa-external-link"></i></a></li>
