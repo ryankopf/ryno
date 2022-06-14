@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <% b = "$('.block_<%= block.id %> .block_types, .block_<%= block.id %> .block_content').toggle();return false;" %>
+  <% b = "$('.block_#{block.id} .block_types, .block_#{block.id} .block_content').toggle();return false;" %>
   <div class="form-group">
     <div class="block-opts text-right position-relative">
       <div class="position-absolute p-3" style="right:0;">
