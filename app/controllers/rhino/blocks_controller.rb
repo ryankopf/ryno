@@ -56,8 +56,9 @@ module Rhino
         @block.update(block_type: 'columns', css_classes: 'row')
         @block.blocks.create(css_classes: 'col-3')
         @block.blocks.create(css_classes: 'col-9')
+        redirect_to @block
       else
-
+        redirect_to @block
       end
     end
 
