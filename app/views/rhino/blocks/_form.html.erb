@@ -21,11 +21,11 @@
   <div class="form-group">
     <div class="block-opts text-right position-relative">
       <div class="position-absolute p-3" style="right:0;">
-        <a href="#" class="btn btn-secondary mr-1" onclick="$('').toggle();return false;">&#x2699;</a>
-        <a href="<%= block_path(block.id) %>" class="btn btn-secondary mr-1"
+        <a href="#" class="btn btn-secondary mr-1" onclick="$('.block_<%= block.id %> .block_types').toggle();return false;">&#x2699;</a>
+        <a href="<%= block_path(block.id) %>" class="btn btn-light mr-1"
            data-turbo-frame="block_<%= block.id %>" data-turbo-method="delete">&times;</a>
       </div>
-      <div class="block_types display-none">
+      <div class="block_types d-none">
         Paragraph Image Columns
       </div>
     </div>
