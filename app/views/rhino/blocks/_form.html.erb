@@ -18,18 +18,25 @@
     </div>
   </div>
 
+  <% b = "$('.block_<%= block.id %> .block_types, .block_<%= block.id %> .block_content').toggle();return false;" %>
   <div class="form-group">
     <div class="block-opts text-right position-relative">
       <div class="position-absolute p-3" style="right:0;">
-        <a href="#" class="btn btn-secondary mr-1" onclick="$('.block_<%= block.id %> .block_types').toggle();return false;">&#x2699;</a>
+        <a href="#" class="btn btn-secondary mr-1" onclick="<%= b %>">&#x2699;</a>
         <a href="<%= block_path(block.id) %>" class="btn btn-light mr-1"
            data-turbo-frame="block_<%= block.id %>" data-turbo-method="delete">&times;</a>
       </div>
     </div>
     <div class="block_types d-none">
-      Paragraph Image Columns
+      <a href="#" class="btn btn-primary">Paragraph</a>
+      <a href="#" class="btn btn-primary">Image</a>
+      <a href="#" class="btn btn-primary">Columns</a>
+      <a href="#" class="btn btn-primary">CSS</a>
+      <a href="#" class="btn btn-primary" onclick="<%= b %>">Cancel</a>
     </div>
-    <%= form.text_area :content, class: 'form-control' %>
+    <div class="block_content">
+      <%= form.text_area :content, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">
