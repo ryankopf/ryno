@@ -92,7 +92,7 @@
   }
   FormMagic.post_and_publish = function () {
     FormMagic.post_blocks();
-    setTimeout(function() {$.get("/rhino/pages/<%= @page.id %>/publish")},1000);
+    setTimeout(function() {$.get("<%= publish_page_path(@page) %>")},1000);
   }
   FormMagic.post_form = function (name) {
     $("form").each(function (i) {
