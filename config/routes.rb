@@ -1,5 +1,9 @@
 Rhino::Engine.routes.draw do
-  resources :blocks
+  resources :blocks do
+    member do
+      get :makecolumns
+    end
+  end
   resources :pages do
     member do
       get :publish

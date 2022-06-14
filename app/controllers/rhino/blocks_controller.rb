@@ -51,7 +51,7 @@ module Rhino
       end
     end
 
-    def make_columns
+    def makecolumns
       if @block.blocks.size < 3
         @block.update(block_type: 'columns', css_classes: 'row')
         @block.blocks.create(css_classes: 'col-3')
