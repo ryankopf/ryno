@@ -90,10 +90,12 @@
     FormMagic.post_form('blocks');
     FormMagic.post_form('pages');
   }
+  <% unless @page.new_record? %>
   FormMagic.post_and_publish = function () {
     FormMagic.post_blocks();
     setTimeout(function() {$.get("<%= publish_page_path(@page) %>")},1000);
   }
+  <% end %>
   FormMagic.post_form = function (name) {
     $("form").each(function (i) {
       var b = $(this);
