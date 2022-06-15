@@ -61,28 +61,28 @@
 <script>
   var FormMagic = {}
   FormMagic.initialize = function () {
-    if ($("#page_seo_title").val() == $("#page_title").val()) {
-      $("#page_seo_title").addClass('follows')
+    if ($("input[name='page[seo_title]']").val() == $("input[name='page[title]']").val()) {
+      $("input[name='page[seo_title]']").addClass('follows')
     }
-    if ($("#page_url").val() == FormMagic.title_to_url()) {
-      $("#page_url").addClass('follows')
+    if ($("input[name='page[url]']").val() == FormMagic.title_to_url()) {
+      $("input[name='page[url]']").addClass('follows')
     }
-    $("#page_title").on("change",FormMagic.change_title);
-    $("#page_seo_title").on("keypress",function() {$("#page_seo_title").removeClass('follows')});
-    $("#page_url").on("keypress",function() {$("#page_url").removeClass('follows')});
-    $("#page_seo_title").on("change",function() {$("#page_seo_title").val()==''&&($("#page_seo_title").val($("#page_title").val()),$("#page_url").addClass('follows'))})
-    $("#page_url").on("change",function() {$("#page_url").val()==''&&($("#page_url").val(FormMagic.title_to_url()),$("#page_url").addClass('follows'))})
+    var a = $("input[name='page[title]']");a.on("change",FormMagic.change_title);
+    var b = $("input[name='page[seo_title]']");b.on("keypress",function() {b.removeClass('follows')});
+    var c = $("input[name='page[url]']");c.on("keypress",function() {c.removeClass('follows')});
+    var d = $("input[name='page[seo_title]']");d.on("change",function() {d.val()==''&&(d.val($("input[name='page[title]']").val()),$("input[name='page[url]']").addClass('follows'))})
+    var e=$("input[name='page[url]']");e.on("change",function() {e.val()==''&&(e.val(FormMagic.title_to_url()),e.addClass('follows'))})
   }
   FormMagic.change_title = function () {
-    if ($("#page_seo_title").attr('class').indexOf('follows') >= 0) {
-      $("#page_seo_title").val($("#page_title").val());
+    if ($("input[name='page[seo_title]']").attr('class').indexOf('follows') >= 0) {
+      $("input[name='page[seo_title]']").val($("input[name='page[title]']").val());
     }
-    if ($("#page_url").attr('class').indexOf('follows') >= 0) {
-      $("#page_url").val(FormMagic.title_to_url());
+    if ($("input[name='page[url]']").attr('class').indexOf('follows') >= 0) {
+      $("input[name='page[url]']").val(FormMagic.title_to_url());
     }
   }
   FormMagic.title_to_url = function () {
-    var url = $("#page_title").val().toLowerCase();
+    var url = $("input[name='page[title]']").val().toLowerCase();
     url = url.replace(/[^a-z0-9]/gi, '-');
     return url;
   };
