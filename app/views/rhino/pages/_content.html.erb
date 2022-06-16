@@ -1,0 +1,28 @@
+
+
+<script>
+  PageContent = {};
+  PageContent.content = JSON.parse(<%= @page.content %>);
+  //PageContent.content = [{type: "html", content: "<div class=''>blah</div>"}]
+  // raw,paragraph,column,image
+  PageContent.render_content = function () {
+    for (var i=0;i<PageContent.content.length;i++) {
+      var c = PageContent.content[i];
+      if (c.type == 'raw') {
+        var e = document.createElement("TEXTAREA");
+        e.textContent = c.content;
+        $(".content_area").append(e)
+      } else if (c.type == '') {
+
+      }
+    }
+  }
+  PageContent.add_block = function () {
+    // + paragraph or column or image or raw
+
+  }
+
+  PageContent.save = function () {
+    JSON.stringify(PageContent.content);
+  }
+</script>

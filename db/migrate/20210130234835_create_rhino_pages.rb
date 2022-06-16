@@ -8,6 +8,7 @@ class CreateRhinoPages < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :redirect_to
       t.string :css_classes
+      t.string :content
 
       t.timestamps
     end
