@@ -37,6 +37,7 @@ module Ryno
         format.turbo_stream {
           render turbo_stream: turbo_stream.append("page_#{@page.id}_blockform", partial: 'show', locals: {block: @block})
         }
+        format.js {}
       end
     end
 
@@ -48,6 +49,7 @@ module Ryno
         format.turbo_stream {
           render turbo_stream: turbo_stream.append("block_#{@parentblock.id}_blockform", partial: 'show', locals: {block: @block})
         }
+        format.js {}
       end
     end
 
