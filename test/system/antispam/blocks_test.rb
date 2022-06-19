@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-module Rhino
+module Ryno
   class BlocksTest < ApplicationSystemTestCase
     setup do
       @block = antispam_blocks(:one)

@@ -1,1 +1,1 @@
-//= link_directory ../stylesheets/rhino.css
+//= link_directory ../stylesheets/ryno.css

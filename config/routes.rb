@@ -1,4 +1,4 @@
-Rhino::Engine.routes.draw do
+Ryno::Engine.routes.draw do
   resources :blocks do
     member do
       get :makecolumns

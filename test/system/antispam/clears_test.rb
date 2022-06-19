@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-module Rhino
+module Ryno
   class ClearsTest < ApplicationSystemTestCase
     setup do
       @clear = antispam_clears(:one)

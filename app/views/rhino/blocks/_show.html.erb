@@ -1,6 +1,0 @@
-<%= turbo_frame_tag @block, class: "#{@block.css_classes} p-4 position-relative block block_#{@block.id}" do %>
-  <%= render partial: 'rhino/blocks/form', block: @block %>
-  <% for @block in @block.blocks %>
-    <%= render partial: 'rhino/blocks/show', block: @block %>
-  <% end %>
-<% end %>

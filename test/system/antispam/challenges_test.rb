@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-module Rhino
+module Ryno
   class ChallengesTest < ApplicationSystemTestCase
     setup do
       @challenge = antispam_challenges(:one)

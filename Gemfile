@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Specify your gem's dependencies in rhino.gemspec.
+# Specify your gem's dependencies in ryno.gemspec.
 gemspec
 
 group :development do

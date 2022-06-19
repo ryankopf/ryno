@@ -1,0 +1,5 @@
+<% for @block in @page.blocks %>
+  <%= render partial: "ryno/blocks/show", block: @block %>
+<% end %>
+
+<%= render partial: 'ryno/blocks/new' %>

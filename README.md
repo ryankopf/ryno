@@ -7,7 +7,7 @@ The gem is used by adding this to your ApplicationController.rb
 
 You need to add this to your routes.rb
 ```
-  mount Rhino::Engine => "/rhino"
+  mount Ryno::Engine => "/ryno"
 ```
 
 
@@ -15,7 +15,7 @@ You need to add this to your routes.rb
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rhino'
+gem 'ryno'
 ```
 
 And then execute:
@@ -25,9 +25,9 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install rhino
-$ rails rhino:install:migrations
-$ rails db:migrate SCOPE=rhino
+$ gem install ryno
+$ rails ryno:install:migrations
+$ rails db:migrate SCOPE=ryno
 ```
 The gem depends on image_processing, which depends on vips. We are using vips to
 help upload images in the CMS.
@@ -43,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ryankopf/rhino. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/ryankopf/rhino/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/ryankopf/ryno. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/ryankopf/ryno/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 The gem is available as you need it.

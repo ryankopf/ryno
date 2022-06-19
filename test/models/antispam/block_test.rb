@@ -1,6 +1,6 @@
 require "test_helper"
 
-module Rhino
+module Ryno
   class BlockTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true

@@ -1,0 +1,5 @@
+if ($(".block_<%= @block.id %>").length>0) {
+  $(".page_<%= @block.page_id %>_blocks").append("<%=j render partial: 'ryno/blocks/edit', block: @block %>")
+} else {
+  $(".block_<%= @block.id %>").replaceWith("<%=j render partial: 'ryno/blocks/edit', block: @block %>")
+}

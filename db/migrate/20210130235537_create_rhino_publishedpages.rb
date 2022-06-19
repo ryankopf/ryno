@@ -1,6 +1,6 @@
-class CreateRhinoPublishedpages < ActiveRecord::Migration[6.1]
+class CreateRynoPublishedpages < ActiveRecord::Migration[6.1]
   def change
-    create_table :rhino_publishedpages do |t|
+    create_table :ryno_publishedpages do |t|
       t.integer :page_id
       t.text :content
       t.string :title

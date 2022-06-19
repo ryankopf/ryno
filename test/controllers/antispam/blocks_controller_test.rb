@@ -1,6 +1,6 @@
 require "test_helper"
 
-module Rhino
+module Ryno
   class BlocksControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 

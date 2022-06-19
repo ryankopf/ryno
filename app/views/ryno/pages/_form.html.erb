@@ -1,0 +1,152 @@
+<%= form_with(model: page, method: (page.new_record? ? :post : :patch)) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this challenge from being saved:</h2>
+      <ul>
+        <% page.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div>
+    <a href="#" onclick="$('.advanced').toggle();return false;">Advanced Options</a>
+  </div>
+
+  <div class="advanced" style="display:none;">
+    <div class="form-group">
+      <%= form.label :seo_title %>
+      <%= form.text_field :seo_title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :url %>
+      <%= form.text_field :url, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :redirect_to %>
+      <%= form.text_field :redirect_to, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :css_classes %>
+      <%= form.text_field :css_classes, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%#= form.submit %>
+    <% if @page.new_record? %>
+      <button type="submit" class="btn btn-primary" action="submit" name="save">Save</button>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="page_<%= @page.id %>_blocks card mt-4 mb-4">
+  <%= render partial: 'ryno/blocks/index', page: @page %>
+</div>
+
+<script>
+  var FormMagic = {}
+  FormMagic.initialize = function () {
+    if ($("input[name='page[seo_title]']").val() == $("input[name='page[title]']").val()) {
+      $("input[name='page[seo_title]']").addClass('follows')
+    }
+    if ($("input[name='page[url]']").val() == FormMagic.title_to_url()) {
+      $("input[name='page[url]']").addClass('follows')
+    }
+    var a = $("input[name='page[title]']");a.on("change",FormMagic.change_title);
+    var b = $("input[name='page[seo_title]']");b.on("keypress",function() {b.removeClass('follows')});
+    var c = $("input[name='page[url]']");c.on("keypress",function() {c.removeClass('follows')});
+    var d = $("input[name='page[seo_title]']");d.on("change",function() {d.val()==''&&(d.val($("input[name='page[title]']").val()),$("input[name='page[url]']").addClass('follows'))})
+    var e=$("input[name='page[url]']");e.on("change",function() {e.val()==''&&(e.val(FormMagic.title_to_url()),e.addClass('follows'))})
+  }
+  FormMagic.change_title = function () {
+    if ($("input[name='page[seo_title]']").attr('class').indexOf('follows') >= 0) {
+      $("input[name='page[seo_title]']").val($("input[name='page[title]']").val());
+    }
+    if ($("input[name='page[url]']").attr('class').indexOf('follows') >= 0) {
+      $("input[name='page[url]']").val(FormMagic.title_to_url());
+    }
+  }
+  FormMagic.title_to_url = function () {
+    var url = $("input[name='page[title]']").val().toLowerCase();
+    url = url.replace(/[^a-z0-9]/gi, '-');
+    return url;
+  };
+  FormMagic.post_blocks = function () {
+    FormMagic.post_form('blocks');
+    FormMagic.post_form('pages');
+  }
+  <% unless @page.new_record? %>
+  FormMagic.post_and_publish = function () {
+    FormMagic.post_blocks();
+    setTimeout(function() {$.get("<%= publish_page_path(@page) %>")},1000);
+  }
+  <% end %>
+  FormMagic.post_form = function (name) {
+    $("form").each(function (i) {
+      var b = $(this);
+      var url = b.attr('action')
+      if (url.indexOf(name) < 0) {
+        return
+      }
+      this.requestSubmit();
+    });
+  }
+  FormMagic.eachx = function () {
+    $("form").each(function (i) {
+      var b = $(this);
+      var url = b.attr('action')
+      if (url.indexOf('blocks') < 0) {
+        return
+      }
+      var data = $(this).serializeArray().reduce(function(obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+      $.ajax({
+        url: url,
+        method: 'post'
+      })
+    });
+  };
+  (function(){var r = setInterval(function(){"undefined"!=typeof $&&(clearInterval(r),FormMagic.initialize())},300);})();
+
+</script>
+<style>
+  .block .block-opts>div {
+    opacity:0;
+    transition:0.5s all;
+  }
+  .block:hover .block-opts>div {
+    opacity: 0.1;
+  }
+  .block .block-opts:hover>div {
+    opacity:1;
+  }
+  .block .block_types {
+    display: none;
+  }
+  trix-toolbar .trix-button-group.trix-button-group--history-tools {
+    display: none;
+  }
+  .col-3 .trix-button-group--file-tools, .col-3 .trix-button-group--block-tools, .col-3 .trix-button-group-spacer {
+    display: none;
+  }
+  .xt-50 {
+    margin-top: -50px;
+  }
+</style>
