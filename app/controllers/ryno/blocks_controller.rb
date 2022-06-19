@@ -32,6 +32,11 @@ module Ryno
     def new_page
       @page = Page.find(params[:page_id])
       @block = @page.blocks.create
+      if params[:col3]
+
+      elsif params[:col9]
+
+      end
       respond_to do |format|
         format.html { redirect_to @block }
         format.turbo_stream {
