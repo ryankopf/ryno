@@ -54,7 +54,7 @@
   </div>
 <% end %>
 
-<div class="page_<%= @page.id %>_blocks card mt-4 mb-4">
+<div class="page_<%= @page.id %>_blocks p-2 mt-4 mb-4 pageblocks">
   <%= render partial: 'ryno/blocks/index', page: @page %>
 </div>
 
@@ -127,14 +127,14 @@
 
 </script>
 <style>
-  .block .block-opts>div {
+  .block .block-opts>div, .addblockbuttons {
     opacity:0;
     transition:0.5s all;
   }
-  .block:hover .block-opts>div {
+  .block:hover .block-opts>div, .pageblocks:hover .addblockbuttons {
     opacity: 0.1;
   }
-  .block .block-opts:hover>div {
+  .block .block-opts:hover>div, .pageblocks .addblockbuttons:hover {
     opacity:1;
   }
   .block .block_types {

@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "page_#{@page.id}_blockform" do %>
-  <div class="text-center">
+  <div class="text-center addblockbuttons">
     <%= link_to "<img src='https://i.ani.me/0332/2951/col-0.png' alt='icon'>".html_safe, new_block_path(page_id: @page.id), class: 'btn btn-primary m-2', data: { remote: true } %>
     <%= link_to "<img src='https://i.ani.me/0332/2945/c-left.png' alt='icon'>".html_safe, new_block_path(page_id: @page.id, col: :left), class: 'btn btn-primary m-2', data: { remote: true } %>
     <%= link_to "<img src='https://i.ani.me/0332/2946/c-mid.png' alt='icon'>".html_safe, new_block_path(page_id: @page.id, col: :mid), class: 'btn btn-primary m-2', data: { remote: true } %>

@@ -32,10 +32,18 @@ module Ryno
     def new_page
       @page = Page.find(params[:page_id])
       @block = @page.blocks.create
-      if params[:col3]
-
-      elsif params[:col9]
-
+      if params[:col] == 'left'
+        @block.update(block_type: 'columns', css_classes: 'row')
+        @block.blocks.create(css_classes: 'col-3')
+        @block.blocks.create(css_classes: 'col-9')
+      elsif params[:col] == 'right'
+        @block.update(block_type: 'columns', css_classes: 'row')
+        @block.blocks.create(css_classes: 'col-9')
+        @block.blocks.create(css_classes: 'col-3')
+      elsif params[:col] == 'mid'
+        @block.update(block_type: 'columns', css_classes: 'row')
+        @block.blocks.create(css_classes: 'col-6')
+        @block.blocks.create(css_classes: 'col-6')
       end
       respond_to do |format|
         format.html { redirect_to @block }
