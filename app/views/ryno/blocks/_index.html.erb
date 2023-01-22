@@ -1,5 +1,6 @@
-<% for @block in @page.blocks %>
-  <%= render partial: "ryno/blocks/show", block: @block %>
+<%= turbo_frame_tag "page_#{@page.id}_blockform" do %>
+  <% for @block in @page.blocks %>
+    <%= render partial: "ryno/blocks/show", block: @block %>
+  <% end %>
+  <%= render partial: 'ryno/blocks/new' %>
 <% end %>
-
-<%= render partial: 'ryno/blocks/new' %>
