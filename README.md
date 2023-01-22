@@ -1,5 +1,6 @@
-# Antispam
-The antispam gem helps create pages on your Rails site.
+# Ryno
+
+The ryno gem helps create pages on your Rails site. This is a project designed to help create a simple CMS system for Rails, without all the clutter.
 
 ## Usage
 
