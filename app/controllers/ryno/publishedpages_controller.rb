@@ -5,6 +5,8 @@ module Ryno
     before_action :set_publishedpage, only: [:show]
 
     def show
+      @html_title = @publishedpage.seo_title
+      @page_title = @html_title
     end
 
     private
