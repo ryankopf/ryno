@@ -1,7 +1,10 @@
 module Ryno
   class PageConstraint
     def initialize
-      @ryno_pages = Publishedpage.pages
+      @ryno_pages = []
+      if ActiveRecord::Base.connection.data_source_exists?('ryno_publishedpages')
+        @ryno_pages = Publishedpage.pages
+      end
     end
 
     def matches?(request)
